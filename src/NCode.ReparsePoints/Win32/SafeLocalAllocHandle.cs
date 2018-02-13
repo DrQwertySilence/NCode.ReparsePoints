@@ -1,4 +1,4 @@
-﻿#region Copyright Preamble
+#region Copyright Preamble
 //
 //    Copyright © 2015 NCode Group
 //
@@ -74,7 +74,7 @@ namespace NCode.ReparsePoints.Win32
 
     public virtual T Read<T>(int position)
     {
-      var value = Marshal.PtrToStructure<T>(handle + position);
+      var value = (T)Marshal.PtrToStructure(handle + position, typeof(T));
       return value;
     }
 
